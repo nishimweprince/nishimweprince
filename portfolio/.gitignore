@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sitemap
+sitemap.xml
+
+# DS Store
+.DS_Store
