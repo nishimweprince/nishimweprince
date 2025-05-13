@@ -13,8 +13,7 @@ export default function Header() {
       </Link>
       <button
         aria-label="Open menu"
-        onClick={(e) => {
-          e.preventDefault();
+        onClick={() => {
           setMenuOpen(!menuOpen);
         }}
         className="md:hidden ml-auto text-white focus:outline-none"
@@ -29,8 +28,7 @@ export default function Header() {
         <Link
           href="#experience"
           className="text-white text-md hover:underline transition-all duration-300"
-          onClick={(e) => {
-            e.preventDefault();
+          onClick={() => {
             setMenuOpen(false);
           }}
         >
@@ -39,8 +37,7 @@ export default function Header() {
         <Link
           href="#projects"
           className="text-white text-md hover:underline transition-all duration-300"
-          onClick={(e) => {
-            e.preventDefault();
+          onClick={() => {
             setMenuOpen(false);
           }}
         >
