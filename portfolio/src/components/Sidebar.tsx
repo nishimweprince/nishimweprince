@@ -1,6 +1,6 @@
 export default function Sidebar() {
   return (
-    <aside className="flex flex-col gap-8 w-full max-w-xs p-8 border-r border-neutral-800 min-h-full">
+    <aside className="hidden md:flex flex-col gap-8 w-full max-w-xs p-8 border-r border-neutral-800 min-h-full">
       <p className="text-neutral-200 text-base">
         Full-Stack Developer building Web applications and AI agents.
       </p>
