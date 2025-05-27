@@ -1,0 +1,85 @@
+export const certificationsList = [
+  {
+    title: 'JavaScript Algorithms and Data Structures',
+    issuer: 'freeCodeCamp',
+    date: 'Issued Jul 2023',
+    credential:
+      'https://freecodecamp.org/certification/nishimweprince/javascript-algorithms-and-data-structures',
+    skills: [
+      'Algorithms',
+      'JavaScript',
+      'Front-End Development',
+      'Object-Oriented Programming (OOP)',
+    ],
+  },
+  {
+    title: 'The Bits and Bytes of Computer Networking',
+    issuer: 'Google',
+    date: 'Issued Mar 2023',
+    credential:
+      'https://www.coursera.org/account/accomplishments/certificate/Z479L5LGQWU7',
+    skills: [
+      'Linux',
+      'SEO Copywriting',
+      'FreeBSD',
+      'Cloud Computing',
+      'Windows Server',
+      'SQL',
+      'Qualitative Research',
+      'Object-Oriented Programming (OOP)',
+      'Data Analysis',
+      'Writing',
+      'Technical Support',
+    ],
+  },
+  {
+    title: 'Technical Support Fundamentals',
+    issuer: 'Google',
+    date: 'Issued Nov 2022',
+    credential:
+      'https://www.coursera.org/account/accomplishments/certificate/N2WZW3FHV8H4',
+    skills: [
+      'Linux',
+      'SEO Copywriting',
+      'FreeBSD',
+      'Cloud Computing',
+      'Windows Server',
+      'SQL',
+      'Qualitative Research',
+      'Technical Support',
+      'Written Communication',
+    ],
+  },
+  {
+    title: 'AWS Certified Solutions Architect – Associate',
+    issuer: 'Amazon Web Services (AWS)',
+    date: 'Issued Aug 2022',
+    credential:
+      'https://www.credly.com/badges/8c56624c-f350-40e7-9549-ca59ee14e803/linked_in_profile',
+    skills: [
+      'Linux',
+      'Udacity',
+      'GitHub',
+      'Data Structures',
+      'SEO Copywriting',
+      'FreeBSD',
+      'Cloud Computing',
+      'Windows Server',
+      'SQL',
+      'Qualitative Research',
+      'Technical Support',
+      'Written Communication',
+      'Data Analysis',
+      'Object-Oriented Programming (OOP)',
+      'AWS Certified Solutions Architect – Associate',
+    ],
+  },
+  {
+    title: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services (AWS)',
+    date: 'Issued Aug 2022',
+    credential:
+      'https://www.credly.com/badges/7ba4d73f-a62d-4562-ba8b-a5cebe5ec643?source=linked_in_profile',
+    skills: ['Cloud Computing', 'AWS Certified Cloud Practitioner'],
+  },
+];

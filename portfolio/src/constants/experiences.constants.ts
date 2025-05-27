@@ -8,6 +8,7 @@ export const experiencesList = [
       'Worked on consolidating e-government services into a central platform, reducing delivery times of service requests by 25%.',
       'Re-engineered the back-end of the project to make it a micro-service, reducing response times by more than 50%.',
     ],
+    website: 'https://www.qtglobal.rw/',
   },
   {
     title: 'Advanced AI Data Trainer',
@@ -18,6 +19,7 @@ export const experiencesList = [
       'Formulated complex prompts for AI models and document completion errors to engineers, leading to a notable 20% reduction in errors within the process.',
       "Drafted ideal responses to facilitate the models' Reinforcement Learning process.",
     ],
+    website: 'https://invisible.tech',
   },
   {
     title: 'Full Stack Developer',
@@ -28,6 +30,7 @@ export const experiencesList = [
       'Developed a data collection platform that uses a custom form builder and advanced analytics to solve business information needs, helping institutions save more than $30,000/year spent on external solutions.',
       'Worked on integrating location-based services in five government platforms using GIS products.',
     ],
+    website: 'https://space.gov.rw',
   },
   {
     title: 'Full Stack Developer',
@@ -39,5 +42,6 @@ export const experiencesList = [
       'Co-developed a data-entry web application using React, Node.js, and deployment on AWS and Firebase.',
       'Helped identify faulty components in websites using Typo3.',
     ],
+    website: 'https://risa.gov.rw',
   },
 ];

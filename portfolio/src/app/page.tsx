@@ -1,6 +1,7 @@
 import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import ExperienceList from '@/components/ExperienceList';
+import CertificationsList from '@/components/CertificationsList';
 import ProjectsList from '@/components/ProjectsList';
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
         <Sidebar />
         <main className="flex-1 flex flex-col">
           <ExperienceList />
+          <CertificationsList />
           <ProjectsList />
         </main>
       </section>

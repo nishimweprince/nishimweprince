@@ -4,6 +4,7 @@ interface ExperienceItemProps {
   date: string;
   location: string;
   bullets: string[];
+  website: string;
 }
 
 export default function ExperienceItem({
@@ -12,6 +13,7 @@ export default function ExperienceItem({
   date,
   location,
   bullets,
+  website,
 }: ExperienceItemProps) {
   return (
     <article className="mb-12">
@@ -19,7 +21,7 @@ export default function ExperienceItem({
         <header className="md:w-1/3 mb-4 md:mb-0 pr-0 md:pr-8">
           <h3 className="text-white text-lg font-normal">{title}</h3>
           <nav className="flex items-center text-sm mb-1">
-            <a href="#" className="text-neutral-400 hover:underline">
+            <a href={website} target="_blank" className="text-neutral-400 hover:underline">
               {company} ↗
             </a>
           </nav>
