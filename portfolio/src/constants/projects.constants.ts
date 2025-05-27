@@ -1,5 +1,26 @@
 export const projectsList = [
   {
+    title: 'RDB URS',
+    description:
+      'Rwanda Development Board (RDB) Unified Registry Services (URS) platform for digital business registration and compliance in Rwanda.',
+    link: 'https://urs.rdb.rw',
+    stack: [
+      'Python',
+      'Bash',
+      'Java',
+      'JavaScript',
+      'SQL',
+      'TypeScript',
+      'Spring Boot',
+      'React',
+    ],
+    docs: null,
+    bullets: [
+      'Enables digital business registration and compliance in Rwanda, allowing investors to register initiatives and gain all required operating licenses within six (6) hours.',
+      'Follows a micro-services architecture on both client and server sides, using React for the frontend and a combination of Java, Spring Boot, and Python for the backend.',
+    ],
+  },
+  {
     title: 'Akagera National Park Booking System',
     description:
       'The official booking system for the Akagera National Park. Includes seats, activities, and payment management.',

@@ -5,8 +5,8 @@ export const experiencesList = [
     date: 'Jan 2024 - Present',
     location: 'Kigali, Rwanda',
     bullets: [
-      'Worked on consolidating e-government services into a central platform, reducing delivery times of service requests by 25%.',
-      'Re-engineered the back-end of the project to make it a micro-service, reducing response times by more than 50%.',
+      'Worked on consolidating registry services into a central platform, reducing delivery times of service requests by an estimated 35%.',
+      'Re-engineered the frontend application of URS into a micro-frontend to drive maintainability and team autonomy',
     ],
     website: 'https://www.qtglobal.rw/',
   },

@@ -12,8 +12,8 @@ export default function Home() {
         <Sidebar />
         <main className="flex-1 flex flex-col">
           <ExperienceList />
-          <CertificationsList />
           <ProjectsList />
+          <CertificationsList />
         </main>
       </section>
     </section>
