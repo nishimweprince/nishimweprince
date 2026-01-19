@@ -3,7 +3,7 @@ export const projectsList = [
     title: 'RDB URS',
     description:
       'Rwanda Development Board (RDB) Unified Registry Services (URS) platform for digital business registration and compliance in Rwanda.',
-    link: 'https://urs.rdb.rw',
+    link: 'https://www.onestopcentre.rdb.rw/',
     stack: [
       'Python',
       'Bash',
@@ -73,24 +73,6 @@ export const projectsList = [
     bullets: [
       "Includes backtesting capabilities using Python's Backtrader framework to validate strategy performance across historical data.",
       'Features a collection of both trend-following and mean-reversion strategies optimized for different market conditions.',
-    ],
-  },
-  {
-    title: 'TradingView Alerts Trading Bot',
-    description:
-      'A trading bot that uses TradingView alerts to trade stocks, crypto, and forex.',
-    link: null,
-    stack: [
-      'TypeScript',
-      'Node.js',
-      'Express.js',
-      'PostgreSQL',
-      'Capital.com API',
-    ],
-    docs: 'nishimweprince/docs/capital-trading/README.md',
-    bullets: [
-      "Implements real-time alert processing with automated trade execution through Capital.com's trading API.",
-      'Features risk management controls including position sizing, stop-loss, and take-profit automation.',
     ],
   },
   {
