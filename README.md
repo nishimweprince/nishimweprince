@@ -38,6 +38,18 @@ Akagera National Park is Central Africa’s largest protected wetland and the la
 - Stack: TypeScript, Node.js, Express.js, PostgreSQL, Capital.com API
 - Docs: [nishimweprince/docs/capital-trading/README.md](docs/capital-trading/README.md)
 
+#### VRVP Strategy (Trading Algos)
+
+- A multi-timeframe forex strategy combining Volume Profile, Stochastic RSI, Fair Value Gap (FVG), and Supertrend indicators, with backtesting, paper trading, and a FastAPI server to run multiple currency pairs.
+- Link: https://github.com/nishimweprince/trading-algos/tree/main/vrvp-strategy
+- Stack: Python, pandas-ta, smartmoneyconcepts, FastAPI, Capital.com API
+
+#### Poker Modelling (Texas Hold'em)
+
+- A full-stack Texas Hold'em web app with a Next.js 15 + Redux Toolkit frontend, a FastAPI backend powered by pokerkit, and PostgreSQL for hand history and action tracking.
+- Link: https://github.com/nishimweprince/poker-modelling
+- Stack: Next.js, TypeScript, FastAPI, Python, PostgreSQL, Redux Toolkit, shadcn/ui, Tailwind CSS, Docker
+
 #### Solana Web3
 
 - A utility application that allows users to transfer SOL and other tokens on the Solana blockchain between wallets.
