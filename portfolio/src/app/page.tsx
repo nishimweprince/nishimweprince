@@ -6,7 +6,7 @@ import ProjectsList from '@/components/ProjectsList';
 
 export default function Home() {
   return (
-    <section className="min-h-screen bg-black text-white flex flex-col">
+    <section className="min-h-screen bg-black text-white flex flex-col scroll-smooth">
       <Header />
       <section className="flex flex-col md:flex-row flex-1 w-full max-w-7xl mx-auto">
         <Sidebar />

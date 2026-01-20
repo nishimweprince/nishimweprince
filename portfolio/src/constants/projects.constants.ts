@@ -1,23 +1,42 @@
 export const projectsList = [
   {
-    title: 'RDB URS',
+    title: 'VRVP Strategy (Trading Algos)',
     description:
-      'Rwanda Development Board (RDB) Unified Registry Services (URS) platform for digital business registration and compliance in Rwanda.',
-    link: 'https://www.onestopcentre.rdb.rw/',
+      'A multi-timeframe forex strategy combining Volume Profile, Stochastic RSI, Fair Value Gap (FVG), and Supertrend indicators, with backtesting, paper trading, and a FastAPI server to run multiple currency pairs.',
+    link: 'https://github.com/nishimweprince/trading-algos/tree/main/vrvp-strategy',
     stack: [
       'Python',
-      'Bash',
-      'Java',
-      'JavaScript',
-      'SQL',
-      'TypeScript',
-      'Spring Boot',
-      'React',
+      'pandas-ta',
+      'smartmoneyconcepts',
+      'FastAPI',
+      'Capital.com API',
     ],
     docs: null,
     bullets: [
-      'Enables digital business registration and compliance in Rwanda, allowing investors to register initiatives and gain all required operating licenses within six (6) hours.',
-      'Follows a micro-services architecture on both client and server sides, using React for the frontend and a combination of Java, Spring Boot, and Python for the backend.',
+      'A multi-timeframe forex strategy combining Volume Profile, Stochastic RSI, Fair Value Gap (FVG), and Supertrend indicators.',
+      'Includes backtesting, paper trading, and a FastAPI server to run multiple currency pairs.',
+    ],
+  },
+  {
+    title: "Poker Modelling (Texas Hold'em)",
+    description:
+      "A full-stack Texas Hold'em web app with a Next.js 15 + Redux Toolkit frontend, a FastAPI backend powered by pokerkit, and PostgreSQL for hand history and action tracking.",
+    link: 'https://github.com/nishimweprince/poker-modelling',
+    stack: [
+      'Next.js',
+      'TypeScript',
+      'FastAPI',
+      'Python',
+      'PostgreSQL',
+      'Redux Toolkit',
+      'shadcn/ui',
+      'Tailwind CSS',
+      'Docker',
+    ],
+    docs: null,
+    bullets: [
+      "A full-stack Texas Hold'em web app with Next.js 15 + Redux Toolkit frontend.",
+      'FastAPI backend powered by pokerkit, with PostgreSQL for hand history and action tracking.',
     ],
   },
   {
@@ -47,8 +66,8 @@ export const projectsList = [
     stack: ['Eliza', 'Python', 'FastAPI', 'PostgreSQL', 'TypeScript'],
     docs: 'nishimweprince/docs/muse-of-research/sourcerer.md',
     bullets: [
-      'The AI agent uses advanced natural language processing to understand research queries and find relevant academic papers across multiple databases.',
-      'Integrated with major academic platforms including arXiv, Google Scholar, and ResearchGate for comprehensive paper discovery.',
+      'An AI agent that helps users find scholarly articles and papers.',
+      'Available on X, Telegram and Discord.',
     ],
   },
   {
@@ -59,8 +78,8 @@ export const projectsList = [
     stack: ['DDEX', 'Node.js', 'React', 'Tailwind CSS', 'PostgreSQL', 'Docker'],
     docs: 'https://github.com/lens-ltd/lens-music-bn/blob/main/README.md',
     bullets: [
-      'Implements DDEX (Digital Data Exchange) standard for seamless music metadata distribution across major streaming platforms.',
-      'Features automated royalty tracking and distribution, ensuring artists receive fair compensation across all platforms.',
+      'A web application allowing creators to distribute their music on 150+ music platforms.',
+      'Implements DDEX (Digital Data Exchange) standard for seamless music metadata distribution.',
     ],
   },
   {
@@ -71,8 +90,8 @@ export const projectsList = [
     stack: ['Pine Script', 'Python', 'Backtrader'],
     docs: 'nishimweprince/docs/tradingview-strategies/README.md',
     bullets: [
-      "Includes backtesting capabilities using Python's Backtrader framework to validate strategy performance across historical data.",
-      'Features a collection of both trend-following and mean-reversion strategies optimized for different market conditions.',
+      'A collection of TradingView strategies (original and community-modified) written in Pine Script.',
+      'Includes backtesting capabilities using Python Backtrader framework.',
     ],
   },
   {
@@ -83,8 +102,8 @@ export const projectsList = [
     stack: ['TypeScript', 'Node.js'],
     docs: null,
     bullets: [
-      "Leverages Solana's high-performance blockchain for fast and cost-effective token transfers with minimal transaction fees.",
-      'Supports both SOL and SPL tokens, with built-in transaction history tracking and wallet balance monitoring.',
+      'A utility application that allows users to transfer SOL and other tokens on the Solana blockchain between wallets.',
+      'Leverages Solana high-performance blockchain for fast and cost-effective token transfers.',
     ],
   },
 ];
