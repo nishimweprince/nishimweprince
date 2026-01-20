@@ -1,5 +1,20 @@
 export const certificationsList = [
   {
+    title: 'Ultimate RAG Bootcamp Using Langchain, LangGraph & Langsmith',
+    issuer: 'Udemy',
+    date: 'Issued Jan 2026',
+    credential:
+      'https://www.udemy.com/certificate/UC-da075d34-a386-4ae0-8787-2a2b3bfe84f9/',
+    skills: [
+      'LangChain',
+      'LangGraph',
+      'LangSmith',
+      'RAG',
+      'Retrieval-Augmented Generation',
+      'Python',
+    ],
+  },
+  {
     title: 'JavaScript Algorithms and Data Structures',
     issuer: 'freeCodeCamp',
     date: 'Issued Jul 2023',
