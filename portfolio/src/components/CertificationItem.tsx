@@ -14,42 +14,44 @@ export default function CertificationItem({
   skills = [],
 }: CertificationItemProps) {
   return (
-    <article className="mb-8 md:mb-10 border border-neutral-800/70 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-[#0073b1]/50 transition-all duration-300 bg-black/70/90 animate-fade-in">
-      <section className="flex flex-col md:flex-row p-5 md:p-6 gap-4 md:gap-6">
-        <header className="md:w-1/3 mb-4 md:mb-0 pr-0 md:pr-8">
-          <h3 className="text-white text-lg md:text-xl font-semibold mb-1">
-            {title}
+    <article className="group !py-4 border-b border-[var(--md-border)] last:border-0">
+      <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 !mb-2">
+        <div className="flex flex-col gap-1">
+          <h3 className="text-lg font-bold text-[var(--md-fg)] uppercase tracking-tight m-0">
+            {credential ? (
+              <a
+                href={credential}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline underline-offset-4 decoration-[var(--md-border)] hover:decoration-[var(--md-fg)] transition-all"
+              >
+                {title}
+              </a>
+            ) : (
+              title
+            )}
           </h3>
-          <p className="text-neutral-400 text-sm font-medium mb-1">
+          <p className="text-sm font-medium text-[var(--md-text-muted)]">
             {issuer}
           </p>
-          <time className="text-neutral-500 text-xs md:text-sm mb-2 block">
-            {date}
-          </time>
-          {credential && (
-            <a
-              href={credential}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#0073b1]/10 text-blue-400 px-3 py-1 rounded-full text-[11px] md:text-xs font-semibold mt-3 hover:bg-[#0073b1]/20 focus:bg-[#0073b1]/20 focus-visible:ring-2 focus-visible:ring-[#0073b1] focus-visible:outline-none transition-all duration-200 shadow-sm"
+        </div>
+        <time className="mono text-[10px] text-[var(--md-text-muted)] font-bold uppercase tracking-widest whitespace-nowrap">
+          {date}
+        </time>
+      </div>
+
+      {skills && skills.length > 0 && (
+        <div className="flex flex-wrap !gap-x-4 !gap-y-1 !mt-3">
+          {skills.map((skill, idx) => (
+            <span
+              key={idx}
+              className="text-[10px] mono font-bold text-[var(--md-text-muted)] uppercase tracking-tight opacity-60"
             >
-              Show credential ↗
-            </a>
-          )}
-        </header>
-        {skills && skills.length > 0 && (
-          <ul className="md:w-2/3 flex flex-wrap gap-2 mt-2">
-            {skills.map((skill, idx) => (
-              <li
-                key={idx}
-                className="bg-neutral-800/80 h-fit text-[11px] md:text-xs px-3 py-1 rounded-full text-neutral-200 font-medium tracking-wide"
-              >
-                {skill}
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
+              # {skill}
+            </span>
+          ))}
+        </div>
+      )}
     </article>
   );
-} 
+}

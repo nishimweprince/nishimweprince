@@ -1,32 +1,29 @@
-import { FiMail, FiPhone, FiLinkedin, FiGithub } from 'react-icons/fi';
-
 export default function Sidebar() {
+  const navLinks = [
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#certifications', label: 'Certifications' },
+  ];
+
   return (
-    <aside className="hidden md:flex flex-col gap-8 w-full max-w-xs p-8 border-r border-neutral-800 min-h-full rounded-xl shadow-lg bg-black/60 backdrop-blur-md transition-all duration-300">
-      <p className="text-neutral-200 text-base">
-        Full-Stack Developer building Web applications and AI agents.
-      </p>
-      <nav className="flex flex-col gap-4 text-neutral-400 text-sm">
-        <a href="mailto:princeelysee@gmail.com" className="flex items-center gap-2 hover:text-blue-400 focus:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded transition-all duration-200">
-          <FiMail className="text-lg" /> princeely@gmail.com ↗
-        </a>
-        <a target="_blank" href="https://wa.me/250788478652" className="flex items-center gap-2 hover:text-blue-400 focus:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded transition-all duration-200">
-          <FiPhone className="text-lg" /> (250) 788 478 652 ↗
-        </a>
-        <a
-          target="_blank"
-          href="https://linkedin.com/in/nishimweprince"
-          className="flex items-center gap-2 hover:text-blue-400 focus:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded transition-all duration-200"
-        >
-          <FiLinkedin className="text-lg" /> LinkedIn ↗
-        </a>
-        <a
-          target="_blank"
-          href="https://github.com/nishimweprince"
-          className="flex items-center gap-2 hover:text-blue-400 focus:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded transition-all duration-200"
-        >
-          <FiGithub className="text-lg" /> GitHub ↗
-        </a>
+    <aside className="hidden lg:flex flex-col w-72 shrink-0 min-h-screen sticky top-0 bg-[var(--md-bg)] z-10">
+      {/* Main Navigation */}
+      <nav className="flex-1 px-6 py-6" aria-label="Main Navigation">
+        <section className="mb-8">
+          <ul className="space-y-1 list-none p-0 !pt-8 m-0">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="group nav-link flex items-center gap-3 px-3 py-2 rounded transition-colors hover:bg-[var(--md-code-bg)]"
+                >
+                  <span className="w-4 h-[1px] bg-[var(--md-border)] group-hover:bg-[var(--md-fg)] transition-colors"></span>
+                  <span className="text-sm text-[var(--md-text-muted)] group-hover:text-[var(--md-fg)] transition-colors">{link.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
       </nav>
     </aside>
   );

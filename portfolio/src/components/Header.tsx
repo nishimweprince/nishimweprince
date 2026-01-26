@@ -1,61 +1,53 @@
-'use client'
+'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
+const contactItems = [
+  { label: 'Email', value: 'princeelysee@gmail.com', href: 'mailto:princeelysee@gmail.com' },
+  { label: 'LinkedIn', value: 'nishimweprince', href: 'https://linkedin.com/in/nishimweprince' },
+  { label: 'GitHub', value: 'nishimweprince', href: 'https://github.com/nishimweprince' },
+  { label: 'Mobile', value: '+250 788 478 652', href: 'tel:+250788478652' },
+];
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className="flex flex-col md:flex-row max-w-[85%] mx-auto justify-between items-start md:items-center w-full py-6 px-4 md:py-8 md:px-8 border-b border-neutral-800 rounded-xl shadow-lg bg-black/70 backdrop-blur-md transition-all duration-300 gap-4 md:gap-6">
-      <Link href={`/`} className="mb-2 md:mb-0">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Nishimwe Prince</h1>
-        <h2 className="text-base md:text-lg text-neutral-400 font-medium">
-          Full Stack Developer • Web Apps & AI Agents
-        </h2>
-      </Link>
-      <button
-        aria-label="Open menu"
-        onClick={() => {
-          setMenuOpen(!menuOpen);
-        }}
-        className="md:hidden ml-auto text-white focus:outline-none"
-      >
-        <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-      <nav
-        className={`w-full md:w-[50%] flex-col md:flex-row flex items-start md:items-center gap-4 md:gap-5 justify-end transition-all duration-300 bg-black/80 md:bg-transparent z-20 ${menuOpen ? 'flex absolute top-20 left-0 px-4 py-4 border-b border-neutral-800 rounded-b-xl shadow-lg' : 'hidden md:flex static'
-          }`}
-      >
-        <Link
-          href="#experience"
-          className="text-white p-1 px-4 rounded-md hover:bg-[#ffffff]/20 active:bg-[#0073b1]/30 focus-visible:bg-[#0073b1]/20 focus-visible:ring-2 focus-visible:ring-[#0073b1] focus-visible:outline-none transition-all duration-300 ease-in-out"
-          onClick={() => {
-            setMenuOpen(false);
-          }}
-        >
-          Experience
-        </Link>
-        <Link
-          href="#certifications"
-          className="text-white p-1 px-4 rounded-md hover:bg-[#ffffff]/20 active:bg-[#0073b1]/30 focus-visible:bg-[#0073b1]/20 focus-visible:ring-2 focus-visible:ring-[#0073b1] focus-visible:outline-none transition-all duration-300 ease-in-out"
-          onClick={() => {
-            setMenuOpen(false);
-          }}
-        >
-          Certifications
-        </Link>
-        <Link
-          href="#projects"
-          className="text-white p-1 px-4 rounded-md hover:bg-[#ffffff]/20 active:bg-[#0073b1]/30 focus-visible:bg-[#0073b1]/20 focus-visible:ring-2 focus-visible:ring-[#0073b1] focus-visible:outline-none transition-all duration-300 ease-in-out"
-          onClick={() => {
-            setMenuOpen(false);
-          }}
-        >
-          Projects
-        </Link>
-      </nav>
+    <header className="mb-2">
+      <div className="flex flex-col gap-8">
+        <div>
+          <span className="inline-block !px-2 !py-0.5 bg-[var(--md-fg)] text-[var(--md-bg)] text-[10px] font-bold tracking-widest uppercase rounded-sm mb-4">
+            Full Stack Developer
+          </span>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter m-0 border-none p-0">
+            Nishimwe Prince
+          </h1>
+        </div>
+
+        <address className="not-italic flex flex-wrap gap-x-12 gap-y-6 pt-2">
+          {contactItems.map((item) => (
+            <div key={item.label} className="flex flex-col gap-1.5 focus-within:ring-1 focus-within:ring-[var(--md-fg)] rounded-sm transition-all">
+              <span className="text-[10px] uppercase tracking-widest text-[var(--md-text-muted)] font-bold">
+                {item.label}
+              </span>
+              {item.href ? (
+                <a
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="text-sm font-medium hover:text-[var(--md-fg)] underline decoration-[var(--md-border)] underline-offset-4 hover:decoration-[var(--md-fg)] transition-all"
+                >
+                  {item.value}
+                </a>
+              ) : (
+                <span className="text-sm font-medium">{item.value}</span>
+              )}
+            </div>
+          ))}
+        </address>
+
+        <section className="mt-4 pl-8 max-w-2xl">
+          <p className="text-xl md:text-2xl text-[var(--md-text)] font-medium leading-tight tracking-tight">
+            I build high-performance web applications and AI agents with a focus on clean architectural patterns and exceptional user experiences.
+          </p>
+        </section>
+      </div>
     </header>
   );
 }

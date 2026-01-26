@@ -45,3 +45,11 @@ sitemap.xml
 
 # DS Store
 .DS_Store
+
+# Agents
+.agents
+.cursor/
+.claude/
+.gemini/
+.kiro/
+.agent/

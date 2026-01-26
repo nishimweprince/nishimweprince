@@ -1,52 +1,52 @@
 import { Metadata } from 'next';
 
 export const metadataConstants: Metadata = {
-  title: 'Nishimwe Prince | Portfolio & Resume',
-  icons: {
-    icon: '/np-icon.svg',
+  title: {
+    default: 'Nishimwe Prince | Full-Stack Developer & AI Agent Architect',
+    template: '%s | Nishimwe Prince',
   },
   description:
-    'Explore the professional portfolio and resume of Nishimwe Prince, a creative visionary with 10+ years of experience in marketing, design, and project leadership. View work experience, achievements, projects, and contact details.',
+    'Full-Stack Developer specializing in high-performance web applications and AI agent architecture. Explore projects, professional experience, and technical certifications by Nishimwe Prince.',
   keywords: [
     'Nishimwe Prince',
+    'Full-Stack Developer',
+    'AI Agent Architect',
+    'Software Engineer',
+    'Next.js Developer',
+    'React Expert',
+    'TypeScript Developer',
+    'Web Application Security',
+    'Cloud Architecture',
+    'AI Integration',
     'Portfolio',
     'Resume',
-    'Senior Producer',
-    'Marketing',
-    'Project Management',
-    'Creative Director',
-    'UI/UX Design',
-    'Frontend Developer',
-    'New York',
-    'Remote Work',
-    'Professional Experience',
-    'Contact',
-    'About Nishimwe Prince',
-    'Work Portfolio',
-    'Leadership',
-    'Web Design',
-    'JavaScript',
-    'TypeScript',
-    'Tech Enthusiast',
-    'Digital Marketing',
-    'SEO',
-    'Innovation',
+    'Senior Developer',
+    'Tech Leadership',
+    'Remote Developer',
+    'Kigali Developer',
   ],
   authors: [{ name: 'Nishimwe Prince', url: 'https://nishimweprince.dev' }],
   creator: 'Nishimwe Prince',
+  publisher: 'Nishimwe Prince',
   metadataBase: new URL('https://nishimweprince.dev'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+    },
+  },
   openGraph: {
-    title: 'Nishimwe Prince | Portfolio & Resume',
+    title: 'Nishimwe Prince | Full-Stack Developer & AI Agent Architect',
     description:
-      "Discover the innovative work and career journey of Nishimwe Prince, a leading professional in web and AI agents' development.",
+      'Explore the architectural patterns and high-performance applications built by Nishimwe Prince. Expert in Next.js, AI, and scalable web tech.',
     url: 'https://nishimweprince.dev',
     siteName: 'Nishimwe Prince Portfolio',
     images: [
       {
-        url: 'https://media.licdn.com/dms/image/v2/D4D03AQEutrb6cPVmfg/profile-displayphoto-shrink_800_800/B4DZPaF04bG0Ak-/0/1734530782886?e=1752710400&v=beta&t=mXWVHStHozfuaSX7x7Elob_5EJkB_r3MLq195dpP0vc',
-        width: 800,
-        height: 800,
-        alt: 'Nishimwe Prince Profile Photo',
+        url: '/og-image.png', // Assuming user might add this or I can suggest it
+        width: 1200,
+        height: 630,
+        alt: 'Nishimwe Prince - Full-Stack Developer Portfolio',
       },
     ],
     locale: 'en_US',
@@ -54,39 +54,24 @@ export const metadataConstants: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nishimwe Prince | Portfolio & Resume',
-    description:
-      "Discover the innovative work and career journey of Nishimwe Prince, a leading professional in web and AI agents' development.",
+    title: 'Nishimwe Prince (@nishimweprince)',
+    description: 'Full-Stack Developer & AI Agent Architect building the future of web.',
     creator: '@nishimweprince',
-    images: [
-      'https://media.licdn.com/dms/image/v2/D4D03AQEutrb6cPVmfg/profile-displayphoto-shrink_800_800/B4DZPaF04bG0Ak-/0/1734530782886?e=1752710400&v=beta&t=mXWVHStHozfuaSX7x7Elob_5EJkB_r3MLq195dpP0vc',
-    ],
-    site: '@nishimweprince',
-  },
-  alternates: {
-    canonical: 'https://nishimweprince.dev',
-    languages: {
-      'en-US': 'https://nishimweprince.dev/en',
-    },
-  },
-  formatDetection: {
-    telephone: false,
-  },
-  appleWebApp: {
-    capable: true,
-    title: 'Nishimwe Prince Portfolio',
-    statusBarStyle: 'black-translucent',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
     follow: true,
-    nocache: false,
-    noimageindex: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
-  archives: 'https://nishimweprince.dev/archives',
-  assets: 'https://nishimweprince.dev/assets',
-  pagination: {
-    previous: 'https://nishimweprince.dev/previous',
-    next: 'https://nishimweprince.dev/next',
+  category: 'technology',
+  verification: {
+    google: 'your-google-verification-code', // Placeholder
   },
 };
