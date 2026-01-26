@@ -1,17 +1,19 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { JetBrains_Mono, Work_Sans } from 'next/font/google';
 import './globals.css';
 import { metadataConstants } from '@/constants/metadata.constants';
 import { ReactNode } from 'react';
 import Script from 'next/script';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const workSans = Work_Sans({
+  variable: '--font-work-sans',
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
   subsets: ['latin'],
+  weight: ['300', '400', '500'],
 });
 
 export const metadata = metadataConstants;
@@ -46,7 +48,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${workSans.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
       </body>
