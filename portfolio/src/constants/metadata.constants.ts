@@ -6,7 +6,7 @@ export const metadataConstants: Metadata = {
     template: '%s | Nishimwe Prince',
   },
   description:
-    'Full-Stack Developer specializing in high-performance web applications and AI agent architecture. Explore projects, professional experience, and technical certifications by Nishimwe Prince.',
+    'Full-Stack Developer with 5+ years of experience building web applications, AI agents, and government-scale platforms. Certified in Node.js (OpenJS) and AWS Solutions Architecture.',
   keywords: [
     'Nishimwe Prince',
     'Full-Stack Developer',

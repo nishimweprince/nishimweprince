@@ -1,5 +1,18 @@
 export const certificationsList = [
   {
+    title: 'OpenJS Node.js Application Developer',
+    issuer: 'OpenJS Foundation',
+    date: 'Issued 2024',
+    credential: '',
+    skills: [
+      'Node.js',
+      'JavaScript',
+      'Server-Side Development',
+      'REST APIs',
+      'Express',
+    ],
+  },
+  {
     title: 'Ultimate RAG Bootcamp Using Langchain, LangGraph & Langsmith',
     issuer: 'Udemy',
     date: 'Issued Jan 2026',

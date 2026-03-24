@@ -44,7 +44,7 @@ export default function Header() {
 
         <section className="mt-4 pl-8 max-w-2xl">
           <p className="text-xl md:text-2xl text-[var(--md-text)] font-medium leading-tight tracking-tight">
-            I build high-performance web applications and AI agents with a focus on clean architectural patterns and exceptional user experiences.
+            Full-Stack Developer with 5+ years of experience building web applications, AI agents, and government-scale platforms. Certified in Node.js (OpenJS) and AWS Solutions Architecture.
           </p>
         </section>
       </div>
