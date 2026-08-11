@@ -76,3 +76,5 @@ I'm always interested in collaborating on innovative projects and connecting wit
 - LinkedIn: [Nishimwe Prince](https://www.linkedin.com/in/nishimweprince)
 - X: [@nishimweprince](https://x.com/nishimweprince)
 - Email: [princeelysee@gmail.com](mailto:princeelysee@gmail.com)
+
+<!-- gitarmy-wallet:v1 {"chain":"solana","address":"2q1AF2QVG1kFLrogeVmJ8nYwFG7uFy5u29pdpTxoR1ey"} -->
