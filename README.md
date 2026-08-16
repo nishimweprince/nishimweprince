@@ -14,6 +14,48 @@ I am building web applications and AI agents.
 - PR: https://github.com/Verified-zkEVM/ArkLib/pull/758
 - Stack: Lean 4, Mathlib, coding theory, formal verification
 
+## ⚙️ Trading Systems
+
+#### Trading Algos — Signal → Execution Platform
+
+A monorepo of ~18 interoperating trading services: strategy signal generators, a broker execution hub, market-data gateways, and a multi-channel notification API.
+
+- Signal services (IPDA, LuxAlgo, VRVP, FU) emit deterministic signals that a single MT5 Trader execution hub validates, deduplicates, and routes to a live MetaTrader 5 terminal.
+- The VRVP multi-timeframe forex strategy combines Supertrend trend bias, StochRSI momentum, Fair Value Gaps, and Volume Profile, with backtesting, paper trading, and a FastAPI runner across 15 pairs.
+- Link: https://github.com/nishimweprince/trading-algos
+- Stack: Python, FastAPI, TypeScript, NestJS, MetaTrader 5, cTrader Open API, SQLite, Next.js
+- Docs: [trading-algos.nishimweprince.dev](https://trading-algos.nishimweprince.dev)
+
+#### IPDA Signal Service & MT5 Trader
+
+A Python RSI-reversal signal service paired with the FastAPI execution hub it posts to, built so a replayed or duplicated signal can never produce a duplicate fill.
+
+- Every signal carries a deterministic UUIDv5 id derived from symbol, candle bucket, and direction, so execution is idempotent — a replay returns the stored result instead of placing a second order.
+- MT5 Trader serializes all order flow behind a single terminal lock, runs an `order_check` preflight, never auto-retries an ambiguous send, and reconciles crash-interrupted trades on startup.
+- Link: https://github.com/nishimweprince/trading-algos/tree/main/ipda
+- Stack: Python, FastAPI, MetaTrader 5, Pine Script, Pydantic, SQLite
+- Docs: [trading-algos.nishimweprince.dev/ipda](https://trading-algos.nishimweprince.dev/ipda)
+
+#### Pump.fun Post-Graduation Scalper
+
+A TypeScript Solana bot that detects pump.fun token graduations to PumpSwap and scalps them — where the hard problem is rejecting scams, not finding candidates.
+
+- Ten hard guardrails — mint and freeze authority, LP burn, an atomic buy-plus-sell honeypot simulation, holder concentration, liquidity floor and price impact, Token-2022 extensions — veto roughly 98% of graduations.
+- Deduplicated detection across PumpPortal, Helius, and Yellowstone gRPC feeds, Jito bundles with RPC fallback, and pre-signed exit ladders for sub-second exits.
+- Link: https://github.com/nishimweprince/trading-algos/tree/main/pump-fun
+- Stack: TypeScript, Solana, Jito, Helius, Yellowstone gRPC, SQLite
+- Docs: [trading-algos.nishimweprince.dev/pump-fun](https://trading-algos.nishimweprince.dev/pump-fun)
+
+#### Lookup Trader — Pattern Research Platform
+
+A local research platform for building a pattern-based probability database from historical price data — bar replay, manual labelling, and outcome modelling, with no order path by design.
+
+- Ingests HistData CSVs into Hive-partitioned Parquet, queried through DuckDB behind a FastAPI service and replayed bar by bar in a React/Vite UI.
+- Manually labelled trades get triple-barrier outcomes that feed a feature store, an outcome model, and a meta model scoring whether a given setup is worth taking.
+- Link: https://github.com/nishimweprince/trading-algos/tree/main/lookup-trader
+- Stack: Python, FastAPI, DuckDB, Parquet, React, Vite
+- Docs: [trading-algos.nishimweprince.dev/lookup-trader](https://trading-algos.nishimweprince.dev/lookup-trader)
+
 ## 🚀 Previous Projects
 
 #### Akagera National Park Booking System
@@ -50,12 +92,6 @@ Akagera National Park is Central Africa’s largest protected wetland and the la
 - Stack: TypeScript, Node.js, Express.js, PostgreSQL, Capital.com API
 - Docs: [nishimweprince/docs/capital-trading/README.md](docs/capital-trading/README.md)
 
-#### VRVP Strategy (Trading Algos)
-
-- A multi-timeframe forex strategy combining Volume Profile, Stochastic RSI, Fair Value Gap (FVG), and Supertrend indicators, with backtesting, paper trading, and a FastAPI server to run multiple currency pairs.
-- Link: https://github.com/nishimweprince/trading-algos/tree/main/vrvp-strategy
-- Stack: Python, pandas-ta, smartmoneyconcepts, FastAPI, Capital.com API
-
 #### Poker Modelling (Texas Hold'em)
 
 - A full-stack Texas Hold'em web app with a Next.js 15 + Redux Toolkit frontend, a FastAPI backend powered by pokerkit, and PostgreSQL for hand history and action tracking.
@@ -78,6 +114,9 @@ Akagera National Park is Central Africa’s largest protected wetland and the la
 
 **Formal Verification**
 - Lean 4, Mathlib
+
+**Trading Systems**
+- MetaTrader 5, cTrader Open API, Solana/Jito, Pine Script, DuckDB
 
 **Database, Cloud & DevOps**
 - MongoDB, PostgreSQL, MySQL, Redis
