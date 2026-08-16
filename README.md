@@ -2,6 +2,18 @@
 
 I am building web applications and AI agents.
 
+## 🔬 Open Source Contributions
+
+#### ArkLib — Formal Verification in Lean 4
+
+[ArkLib](https://github.com/Verified-zkEVM/ArkLib) is the Verified-zkEVM project's Lean 4 formalization of SNARK theory, interactive oracle reductions, and the coding theory underlying modern proof systems.
+
+- Generalized the Elias volume lower bound on list size and its entropy form ([ABF26] Lemma 3.7 and Corollary 3.8) from linear codes over a field to arbitrary codes over a finite alphabet.
+- Restructured the existing field-linear theorems as one-line specializations of the new generic cores, preserving every downstream call site.
+- Introduced no new `sorry` and left the kernel-axiom baseline unchanged; all repository CI gates pass.
+- PR: https://github.com/Verified-zkEVM/ArkLib/pull/758
+- Stack: Lean 4, Mathlib, coding theory, formal verification
+
 ## 🚀 Previous Projects
 
 #### Akagera National Park Booking System
@@ -63,6 +75,9 @@ Akagera National Park is Central Africa’s largest protected wetland and the la
 
 **Backend Development**
 - Node.js, Express.js, Java Spring Boot, Python Django/FastAPI
+
+**Formal Verification**
+- Lean 4, Mathlib
 
 **Database, Cloud & DevOps**
 - MongoDB, PostgreSQL, MySQL, Redis

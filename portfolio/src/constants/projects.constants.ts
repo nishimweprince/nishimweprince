@@ -1,5 +1,23 @@
 export const projectsList = [
   {
+    title: 'ArkLib (Formal Verification, Lean 4)',
+    description:
+      'Open-source contributions to ArkLib, the Verified-zkEVM project formalizing SNARK theory, interactive oracle reductions, and coding theory in Lean 4.',
+    link: 'https://github.com/Verified-zkEVM/ArkLib/pull/758',
+    stack: [
+      'Lean 4',
+      'Mathlib',
+      'Coding Theory',
+      'Formal Verification',
+    ],
+    docs: 'https://github.com/Verified-zkEVM/ArkLib',
+    bullets: [
+      'Generalized the Elias volume lower bound on list size and its entropy form (ABF26 Lemma 3.7 and Corollary 3.8) from linear codes over a field to arbitrary codes over a finite alphabet.',
+      'Restructured the existing field-linear theorems as one-line specializations of the new generic cores, preserving every downstream call site.',
+      'Introduced no new `sorry` and left the kernel-axiom baseline unchanged; all repository CI gates pass.',
+    ],
+  },
+  {
     title: 'VRVP Strategy (Trading Algos)',
     description:
       'A multi-timeframe forex strategy combining Volume Profile, Stochastic RSI, Fair Value Gap (FVG), and Supertrend indicators, with backtesting, paper trading, and a FastAPI server to run multiple currency pairs.',
