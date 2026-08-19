@@ -3,20 +3,26 @@ import CertificationItem from './CertificationItem';
 
 export default function CertificationsList() {
   return (
-    <section id="certifications" className="mb-32 isolate">
-      <header className="mb-12">
-        <h2 className="text-3xl font-bold text-[var(--md-fg)] uppercase tracking-tighter">
-          Certifications
-        </h2>
+    <section id="certifications" className="page-section credentials-section">
+      <header className="section-intro section-intro--split">
+        <div>
+          <p className="eyebrow">Credentials</p>
+          <h2>Learning, made legible.</h2>
+        </div>
+        <p>Validated foundations across backend engineering, cloud infrastructure, networking, and applied AI.</p>
       </header>
 
-      <div className="grid grid-cols-1 gap-4">
-        {certificationsList?.map((cert, i) => (
-          <CertificationItem key={i} {...cert} />
+      <div className="credentials-list">
+        {certificationsList.map((certification) => (
+          <CertificationItem key={`${certification.title}-${certification.date}`} {...certification} />
         ))}
+      </div>
+
+      <div className="closing-callout">
+        <p className="eyebrow">Have a hard problem?</p>
+        <h2>Let&apos;s make it hold.</h2>
+        <a className="button button--inverted" href="mailto:princeelysee@gmail.com">princeelysee@gmail.com ↗</a>
       </div>
     </section>
   );
 }
-
-

@@ -5,6 +5,12 @@ interface ProjectItemProps {
   stack: string[];
   docs?: string | null;
   bullets?: string[];
+  index?: number;
+  compact?: boolean;
+}
+
+function resolveDocsUrl(docs: string) {
+  return docs.startsWith('http') ? docs : `https://github.com/${docs}`;
 }
 
 export default function ProjectItem({
@@ -14,69 +20,65 @@ export default function ProjectItem({
   stack,
   docs,
   bullets = [],
+  index = 0,
+  compact = false,
 }: ProjectItemProps) {
+  const number = String(index + 1).padStart(2, '0');
+
+  if (compact) {
+    return (
+      <article className="archive-project">
+        <div className="archive-project__number">{number}</div>
+        <div className="archive-project__content">
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <div className="tag-list" aria-label="Technology stack">
+            {stack.map((technology) => <span key={technology}>{technology}</span>)}
+          </div>
+          {bullets.length > 0 && (
+            <details className="project-details">
+              <summary>Implementation notes</summary>
+              <ul>{bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+            </details>
+          )}
+        </div>
+        <div className="project-links">
+          {link && <a href={link} target="_blank" rel="noopener noreferrer">Project ↗</a>}
+          {docs && <a href={resolveDocsUrl(docs)} target="_blank" rel="noopener noreferrer">Docs ↗</a>}
+        </div>
+      </article>
+    );
+  }
+
+  const isWide = index === 0;
+
   return (
-    <article className="group bg-[var(--md-code-bg)] !p-6 rounded-lg border border-[var(--md-border)] hover:border-[var(--md-fg)] transition-all flex flex-col h-full">
-      <header className="!mb-4">
-        <h3 className="text-xl font-bold text-[var(--md-fg)] uppercase tracking-tight !m-0">
-          {title}
-        </h3>
+    <article className={`project-card${isWide ? ' project-card--wide' : ''}`}>
+      <header className="project-card__header">
+        <span>{number}</span>
+        <span>{stack[0]}</span>
       </header>
 
-      <div className="flex-1">
-        <p className="text-[var(--md-text)] text-sm !mb-6 leading-relaxed opacity-80">
-          {description}
-        </p>
-
-        {bullets && bullets.length > 0 && (
-          <ul className="list-none !p-0 !m-0 space-y-2 !mb-6">
-            {bullets.map((bullet, idx) => (
-              <li key={idx} className="text-[var(--md-text)] text-[13px] flex items-start gap-3 leading-relaxed">
-                <span className="w-1.5 h-[1px] !mt-2.5 bg-[var(--md-fg)] mt-2 shrink-0"></span>
-                {bullet}
-              </li>
-            ))}
-          </ul>
-        )}
+      <div className="project-card__body">
+        <h3>{title}</h3>
+        <p>{description}</p>
       </div>
 
-      <footer className="mt-auto !pt-6 border-t border-[var(--md-border)] flex flex-col !gap-4">
-        <div className="flex flex-wrap gap-2">
-          {stack.map((tech, idx) => (
-            <span
-              key={idx}
-              className="text-[10px] mono font-bold text-[var(--md-text-muted)] uppercase tracking-widest"
-            >
-              #{tech}
-            </span>
-          ))}
-        </div>
+      <div className="tag-list" aria-label="Technology stack">
+        {stack.map((technology) => <span key={technology}>{technology}</span>)}
+      </div>
 
-        <nav className="flex gap-6" aria-label="Project links">
-          {link && (
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-bold uppercase tracking-widest text-[var(--md-fg)] hover:underline underline-offset-4"
-            >
-              Live Demo ↗
-            </a>
-          )}
-          {docs && (
-            <a
-              href={docs.startsWith('http') ? docs : `https://github.com/${docs}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-bold uppercase tracking-widest text-[var(--md-fg)] hover:underline underline-offset-4"
-            >
-              Docs ↗
-            </a>
-          )}
-        </nav>
+      {bullets.length > 0 && (
+        <details className="project-details">
+          <summary>Why it matters</summary>
+          <ul>{bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+        </details>
+      )}
+
+      <footer className="project-links">
+        {link && <a href={link} target="_blank" rel="noopener noreferrer">View project ↗</a>}
+        {docs && <a href={resolveDocsUrl(docs)} target="_blank" rel="noopener noreferrer">Read the docs ↗</a>}
       </footer>
     </article>
   );
 }
-
-

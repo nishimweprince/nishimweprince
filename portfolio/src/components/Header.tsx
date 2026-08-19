@@ -1,53 +1,51 @@
-'use client';
-
 const contactItems = [
   { label: 'Email', value: 'princeelysee@gmail.com', href: 'mailto:princeelysee@gmail.com' },
-  { label: 'LinkedIn', value: 'nishimweprince', href: 'https://linkedin.com/in/nishimweprince' },
-  { label: 'GitHub', value: 'nishimweprince', href: 'https://github.com/nishimweprince' },
-  { label: 'Mobile', value: '+250 788 478 652', href: 'tel:+250788478652' },
+  { label: 'LinkedIn', value: 'Connect', href: 'https://linkedin.com/in/nishimweprince' },
+  { label: 'GitHub', value: '@nishimweprince', href: 'https://github.com/nishimweprince' },
 ];
 
 export default function Header() {
   return (
-    <header className="mb-2">
-      <div className="flex flex-col gap-8">
-        <div>
-          <span className="inline-block !px-2 !py-0.5 bg-[var(--md-fg)] text-[var(--md-bg)] text-[10px] font-bold tracking-widest uppercase rounded-sm mb-4">
-            Full Stack Developer
-          </span>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter m-0 border-none p-0">
-            Nishimwe Prince
-          </h1>
-        </div>
-
-        <address className="not-italic flex flex-wrap gap-x-12 gap-y-6 pt-2">
-          {contactItems.map((item) => (
-            <div key={item.label} className="flex flex-col gap-1.5 focus-within:ring-1 focus-within:ring-[var(--md-fg)] rounded-sm transition-all">
-              <span className="text-[10px] uppercase tracking-widest text-[var(--md-text-muted)] font-bold">
-                {item.label}
-              </span>
-              {item.href ? (
-                <a
-                  href={item.href}
-                  target={item.href.startsWith('http') ? '_blank' : undefined}
-                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="text-sm font-medium hover:text-[var(--md-fg)] underline decoration-[var(--md-border)] underline-offset-4 hover:decoration-[var(--md-fg)] transition-all"
-                >
-                  {item.value}
-                </a>
-              ) : (
-                <span className="text-sm font-medium">{item.value}</span>
-              )}
-            </div>
-          ))}
-        </address>
-
-        <section className="mt-4 pl-8 max-w-2xl">
-          <p className="text-xl md:text-2xl text-[var(--md-text)] font-medium leading-tight tracking-tight">
-            Full-Stack Developer with 5+ years of experience building web applications, AI agents, and government-scale platforms. Certified in Node.js (OpenJS) and AWS Solutions Architecture.
-          </p>
-        </section>
+    <header id="top" className="hero">
+      <div className="mobile-brandbar">
+        <a className="monogram" href="#top" aria-label="Nishimwe Prince — home">NP<span className="brand-dot">.</span></a>
+        <a className="mobile-contact" href="mailto:princeelysee@gmail.com">Let&apos;s talk</a>
       </div>
+
+      <p className="eyebrow hero-eyebrow">Full-stack engineer · Kigali / Remote</p>
+      <h1>
+        Systems that
+        <span>hold.</span>
+      </h1>
+
+      <div className="hero-lower">
+        <p className="hero-copy">
+          I design and ship web platforms, AI agents, and trading infrastructure for environments where reliability is the feature.
+        </p>
+        <div className="hero-actions">
+          <a className="button button--primary" href="#projects">Explore selected work</a>
+          <a className="button button--secondary" href="mailto:princeelysee@gmail.com">Start a conversation</a>
+        </div>
+      </div>
+
+      <div className="system-path" aria-label="Working approach: Design, ship, observe, refine">
+        {['Design', 'Ship', 'Observe', 'Refine'].map((step, index) => (
+          <div className="system-path__step" key={step}>
+            <span className="system-path__index">0{index + 1}</span>
+            <span>{step}</span>
+          </div>
+        ))}
+      </div>
+
+      <address id="contact" className="contact-strip">
+        {contactItems.map((item) => (
+          <a key={item.label} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+            <span>{item.label}</span>
+            <strong>{item.value}</strong>
+            <span aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </address>
     </header>
   );
 }

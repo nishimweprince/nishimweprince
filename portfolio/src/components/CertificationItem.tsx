@@ -13,45 +13,21 @@ export default function CertificationItem({
   credential,
   skills = [],
 }: CertificationItemProps) {
-  return (
-    <article className="group !py-4 border-b border-[var(--md-border)] last:border-0">
-      <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 !mb-2">
-        <div className="flex flex-col gap-1">
-          <h3 className="text-lg font-bold text-[var(--md-fg)] uppercase tracking-tight m-0">
-            {credential ? (
-              <a
-                href={credential}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline underline-offset-4 decoration-[var(--md-border)] hover:decoration-[var(--md-fg)] transition-all"
-              >
-                {title}
-              </a>
-            ) : (
-              title
-            )}
-          </h3>
-          <p className="text-sm font-medium text-[var(--md-text-muted)]">
-            {issuer}
-          </p>
-        </div>
-        <time className="mono text-[10px] text-[var(--md-text-muted)] font-bold uppercase tracking-widest whitespace-nowrap">
-          {date}
-        </time>
-      </div>
+  const titleContent = credential ? (
+    <a href={credential} target="_blank" rel="noopener noreferrer">{title} <span aria-hidden="true">↗</span></a>
+  ) : title;
 
-      {skills && skills.length > 0 && (
-        <div className="flex flex-wrap !gap-x-4 !gap-y-1 !mt-3">
-          {skills.map((skill, idx) => (
-            <span
-              key={idx}
-              className="text-[10px] mono font-bold text-[var(--md-text-muted)] uppercase tracking-tight opacity-60"
-            >
-              # {skill}
-            </span>
-          ))}
-        </div>
-      )}
+  return (
+    <article className="credential-row">
+      <div>
+        <h3>{titleContent}</h3>
+        <p>{issuer}</p>
+      </div>
+      <div className="credential-skills" aria-label="Skills">
+        {skills.slice(0, 3).map((skill) => <span key={skill}>{skill}</span>)}
+        {skills.length > 3 && <span>+{skills.length - 3}</span>}
+      </div>
+      <time>{date}</time>
     </article>
   );
 }

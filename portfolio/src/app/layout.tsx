@@ -1,28 +1,27 @@
-import { JetBrains_Mono, Work_Sans } from 'next/font/google';
-import './globals.css';
-import { metadataConstants } from '@/constants/metadata.constants';
-import { ReactNode } from 'react';
+import { DM_Sans } from 'next/font/google';
 import Script from 'next/script';
+import { ReactNode } from 'react';
+import { metadataConstants } from '@/constants/metadata.constants';
+import './globals.css';
 
-const workSans = Work_Sans({
-  variable: '--font-work-sans',
+const dmSans = DM_Sans({
+  variable: '--font-body',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: '--font-jetbrains-mono',
-  subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  display: 'swap',
 });
 
 export const metadata = metadataConstants;
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+const themeScript = `
+  try {
+    const saved = localStorage.getItem('portfolio-theme');
+    const dark = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+  } catch (_) {}
+`;
+
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -32,27 +31,28 @@ export default function RootLayout({
     sameAs: [
       'https://linkedin.com/in/nishimweprince',
       'https://github.com/nishimweprince',
-      'https://twitter.com/nishimweprince',
+      'https://x.com/nishimweprince',
     ],
-    description: 'Full-Stack Developer specializing in high-performance web applications and AI agent architecture.',
+    description:
+      'Full-Stack Developer building reliable web applications, AI agents, and public-scale platforms.',
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeScript}
+        </Script>
         <Script
           id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className={`${workSans.variable} ${jetbrainsMono.variable} antialiased`}
-      >
+      <body className={dmSans.variable}>
         {children}
       </body>
     </html>
   );
 }
-
