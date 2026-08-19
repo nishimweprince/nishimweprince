@@ -12,7 +12,7 @@ export default function Header() {
         <a className="mobile-contact" href="mailto:princeelysee@gmail.com">Let&apos;s talk</a>
       </div>
 
-      <p className="eyebrow hero-eyebrow">Full-stack engineer · Kigali / Remote</p>
+      <p className="eyebrow hero-eyebrow">Full-stack engineer · Kansas City, MO / Remote</p>
       <h1>
         Systems that
         <span>hold.</span>
