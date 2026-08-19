@@ -7,7 +7,7 @@ export default function ExperienceList() {
       <header className="section-intro">
         <p className="eyebrow">Experience</p>
         <h2>Built in the real world.</h2>
-        <p>From clinical software and government platforms to AI data systems — work shaped by real constraints and accountable outcomes.</p>
+        <p>From clinical software and government platforms to AI data systems, work shaped by real constraints and accountable outcomes.</p>
       </header>
 
       <div className="experience-list">

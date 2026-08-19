@@ -9,8 +9,6 @@
   --foreground-tertiary: rgba(0, 0, 0, 0.38);
   --border: rgba(0, 0, 0, 0.12);
   --border-strong: rgba(0, 0, 0, 0.28);
-  --brand: #1d9bf0;
-  --focus: #1d9bf0;
   --inverse: #ffffff;
   --rail-width: 15.75rem;
   color-scheme: light;
@@ -70,13 +68,13 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 3px solid var(--foreground);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: var(--brand);
-  color: #ffffff;
+  background: var(--foreground);
+  color: var(--inverse);
 }
 
 .skip-link {
@@ -128,7 +126,7 @@ a {
 }
 
 .brand-dot {
-  color: var(--brand);
+  color: var(--foreground);
 }
 
 .rail-nav {
@@ -366,7 +364,7 @@ a {
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--brand);
+  background: var(--inverse);
   content: '';
   transform: scaleX(0);
   transform-origin: left;
@@ -534,6 +532,7 @@ a {
 }
 
 .company-link {
+  position: relative;
   display: inline-block;
   margin-top: 0.75rem;
   color: var(--foreground-secondary);
@@ -541,11 +540,25 @@ a {
   font-weight: 450;
 }
 
+.company-link::after {
+  position: absolute;
+  bottom: -0.24rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--foreground);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .company-link:hover {
   color: var(--foreground);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.24rem;
+}
+
+.company-link:hover::after {
+  transform: scaleX(1);
 }
 
 .experience-body ul,
@@ -574,7 +587,7 @@ a {
   width: 0.3rem;
   height: 0.3rem;
   border-radius: 50%;
-  background: var(--brand);
+  background: var(--foreground);
   content: '';
 }
 
@@ -654,16 +667,29 @@ a {
 }
 
 .tag-list span,
-.credential-skills span {
+.credential-skills span,
+.credential-skill-count {
   padding: 0.28rem 0.56rem;
   border: 1px solid var(--border);
   border-radius: 999px;
+  background: transparent;
   color: var(--foreground-secondary);
   font-family: var(--font-body), Arial, sans-serif;
   font-size: 0.56rem;
   letter-spacing: 0.045em;
   line-height: 1.2;
   text-transform: uppercase;
+}
+
+.credential-skill-count {
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.credential-skill-count:hover {
+  border-color: var(--foreground);
+  background: var(--foreground);
+  color: var(--inverse);
 }
 
 .project-details {
@@ -715,12 +741,30 @@ a {
 }
 
 .project-links a {
+  position: relative;
   font-size: 0.73rem;
   font-weight: 500;
 }
 
+.project-links a::after {
+  position: absolute;
+  bottom: -0.24rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--foreground);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .project-links a:hover {
-  color: var(--brand);
+  color: var(--foreground);
+}
+
+.project-links a:hover::after {
+  transform: scaleX(1);
 }
 
 .project-archive {
@@ -853,6 +897,107 @@ a {
 
 .credential-skills {
   margin-top: 0;
+}
+
+.skills-dialog {
+  width: min(calc(100% - 2rem), 34rem);
+  max-height: min(42rem, calc(100dvh - 2rem));
+  margin: auto;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: var(--foreground);
+}
+
+.skills-dialog::backdrop {
+  background: color-mix(in srgb, #000000 52%, transparent);
+  backdrop-filter: blur(0.35rem);
+}
+
+.skills-dialog__panel {
+  max-height: min(42rem, calc(100dvh - 2rem));
+  padding: clamp(1.35rem, 4vw, 2rem);
+  overflow-y: auto;
+  border: 1px solid var(--border-strong);
+  background: var(--background);
+  box-shadow: 0 1.5rem 5rem color-mix(in srgb, #000000 22%, transparent);
+}
+
+.skills-dialog__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.skills-dialog__header .eyebrow {
+  margin-bottom: 1rem;
+}
+
+.skills-dialog__header h3 {
+  max-width: 24rem;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.skills-dialog__header > div > p:last-child {
+  margin-top: 0.5rem;
+  color: var(--foreground-secondary);
+  font-size: 0.72rem;
+}
+
+.skills-dialog__close {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: 300;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.skills-dialog__close:hover {
+  background: var(--foreground);
+  color: var(--inverse);
+}
+
+.skills-dialog__label {
+  margin-top: 2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--foreground);
+  color: var(--foreground-secondary);
+  font-size: 0.61rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.skills-dialog ul {
+  list-style: none;
+}
+
+.skills-dialog li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+  font-weight: 350;
+}
+
+.skills-dialog li > span {
+  color: var(--foreground-tertiary);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
 }
 
 .credential-row time {
@@ -1120,7 +1265,8 @@ a {
   }
 
   .credential-skills {
-    display: none;
+    grid-column: 1 / -1;
+    margin-top: 0.25rem;
   }
 
   .closing-callout {

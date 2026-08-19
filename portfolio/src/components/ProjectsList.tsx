@@ -14,7 +14,7 @@ export default function ProjectsList() {
           <p className="eyebrow">Selected work</p>
           <h2>Systems with a point of view.</h2>
         </div>
-        <p>Formal proofs, market infrastructure, and public-facing products — selected for the decisions behind the interface.</p>
+        <p>Formal proofs, market infrastructure, and public-facing products, selected for the decisions behind the interface.</p>
       </header>
 
       <div className="project-grid">

@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header id="top" className="hero">
       <div className="mobile-brandbar">
-        <a className="monogram" href="#top" aria-label="Nishimwe Prince — home">NP<span className="brand-dot">.</span></a>
+        <a className="monogram" href="#top" aria-label="Nishimwe Prince home">NP<span className="brand-dot">.</span></a>
         <a className="mobile-contact" href="mailto:princeelysee@gmail.com">Let&apos;s talk</a>
       </div>
 

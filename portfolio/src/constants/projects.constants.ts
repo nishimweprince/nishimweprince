@@ -20,7 +20,7 @@ export const projectsList = [
   {
     title: 'Trading Algos (Signal → Execution Platform)',
     description:
-      'A monorepo of ~18 interoperating trading services — strategy signal generators, a broker execution hub, market-data gateways, and a multi-channel notification API — documented end to end as a Nextra site.',
+      'A monorepo of ~18 interoperating trading services: strategy signal generators, a broker execution hub, market-data gateways, and a multi-channel notification API, documented end to end as a Nextra site.',
     link: 'https://github.com/nishimweprince/trading-algos',
     stack: [
       'Python',
@@ -37,7 +37,7 @@ export const projectsList = [
       'Signal services (IPDA, LuxAlgo, VRVP, FU) emit deterministic signals that a single MT5 Trader execution hub validates, deduplicates, and routes to a live MetaTrader 5 terminal.',
       'The VRVP multi-timeframe forex strategy combines Supertrend trend bias, StochRSI momentum, Fair Value Gaps, and Volume Profile, with backtesting, paper trading, and a FastAPI runner across 15 pairs.',
       'Shared infrastructure: a cTrader Open API gateway exposing ticks and OHLC over HTTP and SSE, and a NestJS notification service fanning out to Telegram, email, SMS, and WhatsApp with idempotent delivery.',
-      'Documented as a Nextra/MDX site — 120+ pages across 17 project sections, with Pagefind search.',
+      'Documented as a Nextra/MDX site with 120+ pages across 17 project sections, with Pagefind search.',
     ],
   },
   {
@@ -56,7 +56,7 @@ export const projectsList = [
     docs: 'https://trading-algos.nishimweprince.dev/ipda',
     bullets: [
       'Ports the RSI Buy Chance / Sell Chance reversal trigger from a TradingView Pine indicator: polls 1-minute OHLC, aggregates to the target timeframe, and fires at most once per candle bucket before locking it.',
-      'Every signal carries a deterministic UUIDv5 id derived from symbol, candle bucket, and direction, so execution is idempotent — a replay returns the stored result instead of placing a second order.',
+      'Every signal carries a deterministic UUIDv5 id derived from symbol, candle bucket, and direction, so execution is idempotent: a replay returns the stored result instead of placing a second order.',
       'MT5 Trader serializes all order flow behind a single terminal lock, runs an order_check preflight, never auto-retries an ambiguous send, and reconciles crash-interrupted trades on startup.',
       'Session gating for Tokyo and New York, mandatory distance-based stop and target profiles per instrument class, and advisory break-even alerts through the shared notification service.',
     ],
@@ -64,7 +64,7 @@ export const projectsList = [
   {
     title: 'Pump.fun Post-Graduation Scalper',
     description:
-      'A TypeScript Solana bot that detects pump.fun token graduations to PumpSwap and scalps them — where the hard problem is rejecting scams, not finding candidates.',
+      'A TypeScript Solana bot that detects pump.fun token graduations to PumpSwap and scalps them, where the hard problem is rejecting scams, not finding candidates.',
     link: 'https://github.com/nishimweprince/trading-algos/tree/main/pump-fun',
     stack: [
       'TypeScript',
@@ -76,45 +76,23 @@ export const projectsList = [
     ],
     docs: 'https://trading-algos.nishimweprince.dev/pump-fun',
     bullets: [
-      'Ten hard guardrails — mint and freeze authority, LP burn, an atomic buy-plus-sell honeypot simulation, holder concentration, liquidity floor and price impact, Token-2022 extensions — veto roughly 98% of graduations.',
+      'Ten hard guardrails (mint and freeze authority, LP burn, an atomic buy-plus-sell honeypot simulation, holder concentration, liquidity floor and price impact, Token-2022 extensions) veto roughly 98% of graduations.',
       'Detector → guardrails → position manager → executor pipeline over a typed in-process event bus, with durable SQLite state for crash recovery.',
       'Deduplicated detection across PumpPortal, Helius, and Yellowstone gRPC feeds, Jito bundles with RPC fallback, and pre-signed exit ladders for sub-second exits.',
       'Ships paper-first: paper → dry-run → live behind a manual gate, with circuit breakers and a kill switch.',
     ],
   },
   {
-    title: "Poker Modelling (Texas Hold'em)",
-    description:
-      "A full-stack Texas Hold'em web app with a Next.js 15 + Redux Toolkit frontend, a FastAPI backend powered by pokerkit, and PostgreSQL for hand history and action tracking.",
-    link: 'https://github.com/nishimweprince/poker-modelling',
-    stack: [
-      'Next.js',
-      'TypeScript',
-      'FastAPI',
-      'Python',
-      'PostgreSQL',
-      'Redux Toolkit',
-      'shadcn/ui',
-      'Tailwind CSS',
-      'Docker',
-    ],
-    docs: null,
-    bullets: [
-      "A full-stack Texas Hold'em web app with Next.js 15 + Redux Toolkit frontend.",
-      'FastAPI backend powered by pokerkit, with PostgreSQL for hand history and action tracking.',
-    ],
-  },
-  {
     title: 'Lookup Trader (Pattern Research Platform)',
     description:
-      'A local research platform for building a pattern-based probability database from historical price data — bar replay, manual labelling, and outcome modelling, with no order path by design.',
+      'A local research platform for building a pattern-based probability database from historical price data: bar replay, manual labelling, and outcome modelling, with no order path by design.',
     link: 'https://github.com/nishimweprince/trading-algos/tree/main/lookup-trader',
     stack: ['Python', 'FastAPI', 'DuckDB', 'Parquet', 'React', 'Vite'],
     docs: 'https://trading-algos.nishimweprince.dev/lookup-trader',
     bullets: [
       'Ingests HistData CSVs into Hive-partitioned Parquet, queried through DuckDB behind a FastAPI service and replayed bar by bar in a React/Vite UI.',
       'Manually labelled trades get triple-barrier outcomes that feed a feature store, an outcome model, and a meta model scoring whether a given setup is worth taking.',
-      'Order execution is asserted off on every artifact load — the tool is deliberately research-only.',
+      'Order execution is asserted off on every artifact load; the tool is deliberately research-only.',
     ],
   },
   {

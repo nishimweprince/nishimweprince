@@ -79,7 +79,7 @@ export const certificationsList = [
     ],
   },
   {
-    title: 'AWS Certified Solutions Architect – Associate',
+    title: 'AWS Certified Solutions Architect - Associate',
     issuer: 'Amazon Web Services (AWS)',
     date: 'Issued Aug 2022',
     credential:
@@ -99,7 +99,7 @@ export const certificationsList = [
       'Written Communication',
       'Data Analysis',
       'Object-Oriented Programming (OOP)',
-      'AWS Certified Solutions Architect – Associate',
+      'AWS Certified Solutions Architect - Associate',
     ],
   },
   {

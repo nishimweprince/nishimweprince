@@ -10,7 +10,7 @@ const navLinks = [
 export default function Sidebar() {
   return (
     <aside className="site-rail">
-      <a className="monogram" href="#top" aria-label="Nishimwe Prince — home">
+      <a className="monogram" href="#top" aria-label="Nishimwe Prince home">
         NP<span className="brand-dot">.</span>
       </a>
 
@@ -23,7 +23,6 @@ export default function Sidebar() {
       </nav>
 
       <div className="rail-footer">
-        <p className="availability"><span aria-hidden="true" /> Available for select work</p>
         <ThemeToggle />
       </div>
     </aside>
