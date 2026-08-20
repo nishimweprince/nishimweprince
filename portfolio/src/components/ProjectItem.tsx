@@ -1,3 +1,5 @@
+import { FaArrowUpRightFromSquare, FaMinus, FaPlus } from 'react-icons/fa6';
+
 interface ProjectItemProps {
   title: string;
   description: string;
@@ -37,14 +39,20 @@ export default function ProjectItem({
           </div>
           {bullets.length > 0 && (
             <details className="project-details">
-              <summary>Implementation notes</summary>
+              <summary>
+                <span>Implementation notes</span>
+                <span className="project-details__icons" aria-hidden="true">
+                  <FaPlus className="project-details__icon project-details__icon--closed" />
+                  <FaMinus className="project-details__icon project-details__icon--open" />
+                </span>
+              </summary>
               <ul>{bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
             </details>
           )}
         </div>
         <div className="project-links">
-          {link && <a href={link} target="_blank" rel="noopener noreferrer">Project ↗</a>}
-          {docs && <a href={resolveDocsUrl(docs)} target="_blank" rel="noopener noreferrer">Docs ↗</a>}
+          {link && <a href={link} target="_blank" rel="noopener noreferrer">Project <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" /></a>}
+          {docs && <a href={resolveDocsUrl(docs)} target="_blank" rel="noopener noreferrer">Docs <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" /></a>}
         </div>
       </article>
     );
@@ -70,14 +78,20 @@ export default function ProjectItem({
 
       {bullets.length > 0 && (
         <details className="project-details">
-          <summary>Why it matters</summary>
+          <summary>
+            <span>Why it matters</span>
+            <span className="project-details__icons" aria-hidden="true">
+              <FaPlus className="project-details__icon project-details__icon--closed" />
+              <FaMinus className="project-details__icon project-details__icon--open" />
+            </span>
+          </summary>
           <ul>{bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
         </details>
       )}
 
       <footer className="project-links">
-        {link && <a href={link} target="_blank" rel="noopener noreferrer">View project ↗</a>}
-        {docs && <a href={resolveDocsUrl(docs)} target="_blank" rel="noopener noreferrer">Read the docs ↗</a>}
+        {link && <a href={link} target="_blank" rel="noopener noreferrer">View project <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" /></a>}
+        {docs && <a href={resolveDocsUrl(docs)} target="_blank" rel="noopener noreferrer">Read the docs <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" /></a>}
       </footer>
     </article>
   );

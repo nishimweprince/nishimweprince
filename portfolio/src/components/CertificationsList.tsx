@@ -1,4 +1,5 @@
 import { certificationsList } from '@/constants/certifications.constants';
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import CertificationItem from './CertificationItem';
 
 export default function CertificationsList() {
@@ -21,7 +22,7 @@ export default function CertificationsList() {
       <div className="closing-callout">
         <p className="eyebrow">Have a hard problem?</p>
         <h2>Let&apos;s make it hold.</h2>
-        <a className="button button--inverted" href="mailto:princeelysee@gmail.com">princeelysee@gmail.com ↗</a>
+        <a className="button button--inverted" href="mailto:princeelysee@gmail.com">princeelysee@gmail.com <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" /></a>
       </div>
     </section>
   );

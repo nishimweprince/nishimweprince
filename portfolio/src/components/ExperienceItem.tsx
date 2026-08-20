@@ -1,3 +1,5 @@
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
+
 interface ExperienceItemProps {
   title: string;
   company: string;
@@ -25,7 +27,7 @@ export default function ExperienceItem({
       <div className="experience-body">
         <h3>{title}</h3>
         <a className="company-link" href={website} target="_blank" rel="noopener noreferrer">
-          {company} <span aria-hidden="true">↗</span>
+          {company} <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" />
         </a>
         <ul>
           {bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}

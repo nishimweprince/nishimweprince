@@ -3,6 +3,7 @@ import ExperienceList from '@/components/ExperienceList';
 import Header from '@/components/Header';
 import ProjectsList from '@/components/ProjectsList';
 import Sidebar from '@/components/Sidebar';
+import { FaArrowUp, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 export default function Home() {
   return (
@@ -21,13 +22,13 @@ export default function Home() {
         <footer className="site-footer">
           <p>© {new Date().getFullYear()} Nishimwe Prince</p>
           <div className="footer-links">
-            <a href="#top">Back to top ↑</a>
+            <a href="#top">Back to top <FaArrowUp className="inline-icon" aria-hidden="true" /></a>
             <a
               href="https://github.com/nishimweprince/nishimweprince/tree/main/portfolio"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View source ↗
+              View source <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" />
             </a>
           </div>
         </footer>

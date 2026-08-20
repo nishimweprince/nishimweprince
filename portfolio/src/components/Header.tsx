@@ -1,3 +1,5 @@
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
+
 const contactItems = [
   { label: 'Email', value: 'princeelysee@gmail.com', href: 'mailto:princeelysee@gmail.com' },
   { label: 'LinkedIn', value: 'Connect', href: 'https://linkedin.com/in/nishimweprince' },
@@ -42,7 +44,7 @@ export default function Header() {
           <a key={item.label} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
             <span>{item.label}</span>
             <strong>{item.value}</strong>
-            <span aria-hidden="true">↗</span>
+            <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" />
           </a>
         ))}
       </address>

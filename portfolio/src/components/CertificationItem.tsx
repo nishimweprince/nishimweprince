@@ -2,6 +2,7 @@
 
 import { useId, useRef } from 'react';
 import type { MouseEvent } from 'react';
+import { FaArrowUpRightFromSquare, FaXmark } from 'react-icons/fa6';
 
 interface CertificationItemProps {
   title: string;
@@ -22,7 +23,7 @@ export default function CertificationItem({
   const titleId = useId();
   const remainingSkills = skills.slice(3);
   const titleContent = credential ? (
-    <a href={credential} target="_blank" rel="noopener noreferrer">{title} <span aria-hidden="true">↗</span></a>
+    <a href={credential} target="_blank" rel="noopener noreferrer">{title} <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" /></a>
   ) : title;
 
   const closeOnBackdrop = (event: MouseEvent<HTMLDialogElement>) => {
@@ -71,7 +72,7 @@ export default function CertificationItem({
                 onClick={() => dialogRef.current?.close()}
                 aria-label="Close skills dialog"
               >
-                <span aria-hidden="true">×</span>
+                <FaXmark aria-hidden="true" />
               </button>
             </div>
             <p className="skills-dialog__label">Other skills attained</p>

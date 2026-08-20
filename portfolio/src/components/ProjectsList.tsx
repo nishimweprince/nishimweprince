@@ -1,4 +1,5 @@
 import { projectsList } from '@/constants/projects.constants';
+import { FaPlus } from 'react-icons/fa6';
 import ProjectItem from './ProjectItem';
 
 const FEATURED_PROJECT_COUNT = 5;
@@ -28,7 +29,7 @@ export default function ProjectsList() {
           <summary>
             <span>More work</span>
             <span>{archivedProjects.length} additional projects</span>
-            <span className="archive-toggle" aria-hidden="true">+</span>
+            <span className="archive-toggle" aria-hidden="true"><FaPlus /></span>
           </summary>
           <div className="archive-list">
             {archivedProjects.map((project, index) => (

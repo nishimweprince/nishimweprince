@@ -225,16 +225,15 @@ a {
 .theme-toggle__thumb svg {
   width: 0.85rem;
   height: 0.85rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
+  fill: currentColor;
 }
 
-.theme-toggle__thumb svg path:first-child {
-  fill: currentColor;
-  stroke: none;
+.inline-icon {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  flex: 0 0 auto;
+  vertical-align: -0.02em;
 }
 
 .theme-toggle__label {
@@ -699,8 +698,11 @@ a {
 
 .project-details summary {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   width: max-content;
-  padding: 0.85rem 1.5rem 0.3rem 0;
+  padding: 0.85rem 0 0.3rem;
   color: var(--foreground-secondary);
   cursor: pointer;
   font-size: 0.72rem;
@@ -712,14 +714,29 @@ a {
   display: none;
 }
 
-.project-details summary::after {
-  position: absolute;
-  right: 0;
-  content: '+';
+.project-details__icons {
+  display: grid;
+  width: 0.62rem;
+  height: 0.62rem;
+  place-items: center;
 }
 
-.project-details[open] summary::after {
-  content: '−';
+.project-details__icon {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+}
+
+.project-details__icon--open {
+  display: none;
+}
+
+.project-details[open] .project-details__icon--closed {
+  display: none;
+}
+
+.project-details[open] .project-details__icon--open {
+  display: block;
 }
 
 .project-details ul {
@@ -742,6 +759,9 @@ a {
 
 .project-links a {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-size: 0.73rem;
   font-weight: 500;
 }
@@ -811,6 +831,11 @@ a {
   border-radius: 50%;
   font-size: 1.3rem;
   font-weight: 350;
+}
+
+.archive-toggle svg {
+  width: 0.72rem;
+  height: 0.72rem;
 }
 
 .project-archive[open] .archive-toggle {
@@ -963,6 +988,11 @@ a {
   font-size: 1.15rem;
   font-weight: 300;
   transition: background-color 150ms ease, color 150ms ease;
+}
+
+.skills-dialog__close svg {
+  width: 0.8rem;
+  height: 0.8rem;
 }
 
 .skills-dialog__close:hover {
