@@ -77,6 +77,12 @@ a {
   color: var(--inverse);
 }
 
+.system-path ::selection,
+.closing-callout ::selection {
+  background: var(--inverse);
+  color: var(--foreground);
+}
+
 .skip-link {
   position: fixed;
   top: 0.75rem;
