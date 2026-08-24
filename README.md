@@ -1,6 +1,25 @@
-### What up,
+# Nishimwe Prince
 
-I am building web applications and AI agents.
+I build reliable software systems across algorithmic trading, full-stack platforms, AI agents, and formal verification. My current flagship project is **Trading Algos**: a documented signal-to-execution platform that connects strategy research, live market data, safety controls, broker execution, and operations.
+
+## ⚙️ Flagship Project: Trading Algos
+
+### Signal → Execution Platform
+
+[Trading Algos](https://github.com/nishimweprince/trading-algos) is a monorepo of roughly 18 interoperating services, built to carry a market event from observation to decision and execution without losing control of risk or system state.
+
+- **Strategies:** IPDA, LuxAlgo, VRVP, FU, Bitcoin 9to5, Pump.fun, and pattern-research workflows.
+- **Execution:** A FastAPI MT5 hub validates, deduplicates, serializes, and reconciles orders before they reach a live terminal.
+- **Market data:** cTrader Open API gateways expose ticks and OHLC over HTTP and server-sent events.
+- **Safety:** Deterministic signal IDs, paper-first run modes, hard risk gates, circuit breakers, and durable crash recovery.
+- **Operations:** Multi-channel notifications, stateful monitoring, configuration profiles, and operator runbooks.
+- **Documentation:** More than 120 pages across 17 project areas, with architecture, setup, configuration, APIs, testing, safety, and deployment guidance.
+
+**[Explore the documentation →](https://trading-algos.nishimweprince.dev)**
+
+**[View the source →](https://github.com/nishimweprince/trading-algos)**
+
+Core stack: Python, FastAPI, TypeScript, NestJS, MetaTrader 5, cTrader Open API, Solana, SQLite, DuckDB, React, and Next.js.
 
 ## 🔬 Open Source Contributions
 
@@ -14,17 +33,7 @@ I am building web applications and AI agents.
 - PR: https://github.com/Verified-zkEVM/ArkLib/pull/758
 - Stack: Lean 4, Mathlib, coding theory, formal verification
 
-## ⚙️ Trading Systems
-
-#### Trading Algos — Signal → Execution Platform
-
-A monorepo of ~18 interoperating trading services: strategy signal generators, a broker execution hub, market-data gateways, and a multi-channel notification API.
-
-- Signal services (IPDA, LuxAlgo, VRVP, FU) emit deterministic signals that a single MT5 Trader execution hub validates, deduplicates, and routes to a live MetaTrader 5 terminal.
-- The VRVP multi-timeframe forex strategy combines Supertrend trend bias, StochRSI momentum, Fair Value Gaps, and Volume Profile, with backtesting, paper trading, and a FastAPI runner across 15 pairs.
-- Link: https://github.com/nishimweprince/trading-algos
-- Stack: Python, FastAPI, TypeScript, NestJS, MetaTrader 5, cTrader Open API, SQLite, Next.js
-- Docs: [trading-algos.nishimweprince.dev](https://trading-algos.nishimweprince.dev)
+## ⚙️ Selected Trading Systems
 
 #### IPDA Signal Service & MT5 Trader
 

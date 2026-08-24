@@ -14,7 +14,12 @@ export default function Header() {
         <a className="mobile-contact" href="mailto:princeelysee@gmail.com">Let&apos;s talk</a>
       </div>
 
-      <p className="eyebrow hero-eyebrow">Full-stack engineer · Kansas City, MO / Remote</p>
+      <div className="hero-kicker">
+        <p className="eyebrow">Full-stack engineer · Kansas City, MO / Remote</p>
+        <a href="#trading-algos">
+          Now building Trading Algos <span aria-hidden="true">↓</span>
+        </a>
+      </div>
       <h1>
         Systems that
         <span>hold.</span>
@@ -22,11 +27,14 @@ export default function Header() {
 
       <div className="hero-lower">
         <p className="hero-copy">
-          I design and ship web platforms, AI agents, and trading infrastructure for environments where reliability is the feature.
+          I design and ship web platforms, AI agents, and trading infrastructure—currently
+          focused on a multi-service platform that carries market signals safely into execution.
         </p>
         <div className="hero-actions">
-          <a className="button button--primary" href="#projects">Explore selected work</a>
-          <a className="button button--secondary" href="mailto:princeelysee@gmail.com">Start a conversation</a>
+          <a className="button button--primary" href="https://trading-algos.nishimweprince.dev" target="_blank" rel="noopener noreferrer">
+            Explore Trading Algos <FaArrowUpRightFromSquare className="inline-icon" aria-hidden="true" />
+          </a>
+          <a className="button button--secondary" href="#projects">Selected work</a>
         </div>
       </div>
 

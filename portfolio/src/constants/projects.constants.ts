@@ -18,29 +18,6 @@ export const projectsList = [
     ],
   },
   {
-    title: 'Trading Algos (Signal → Execution Platform)',
-    description:
-      'A monorepo of ~18 interoperating trading services: strategy signal generators, a broker execution hub, market-data gateways, and a multi-channel notification API, documented end to end as a Nextra site.',
-    link: 'https://github.com/nishimweprince/trading-algos',
-    stack: [
-      'Python',
-      'FastAPI',
-      'TypeScript',
-      'NestJS',
-      'MetaTrader 5',
-      'cTrader Open API',
-      'SQLite',
-      'Next.js',
-    ],
-    docs: 'https://trading-algos.nishimweprince.dev',
-    bullets: [
-      'Signal services (IPDA, LuxAlgo, VRVP, FU) emit deterministic signals that a single MT5 Trader execution hub validates, deduplicates, and routes to a live MetaTrader 5 terminal.',
-      'The VRVP multi-timeframe forex strategy combines Supertrend trend bias, StochRSI momentum, Fair Value Gaps, and Volume Profile, with backtesting, paper trading, and a FastAPI runner across 15 pairs.',
-      'Shared infrastructure: a cTrader Open API gateway exposing ticks and OHLC over HTTP and SSE, and a NestJS notification service fanning out to Telegram, email, SMS, and WhatsApp with idempotent delivery.',
-      'Documented as a Nextra/MDX site with 120+ pages across 17 project sections, with Pagefind search.',
-    ],
-  },
-  {
     title: 'IPDA Signal Service & MT5 Trader',
     description:
       'A Python RSI-reversal signal service paired with the FastAPI execution hub it posts to, built so a replayed or duplicated signal can never produce a duplicate fill.',

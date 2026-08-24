@@ -3,6 +3,7 @@ import ExperienceList from '@/components/ExperienceList';
 import Header from '@/components/Header';
 import ProjectsList from '@/components/ProjectsList';
 import Sidebar from '@/components/Sidebar';
+import TradingAlgosSpotlight from '@/components/TradingAlgosSpotlight';
 import { FaArrowUp, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
 
       <main id="main-content" className="site-main">
         <Header />
+        <TradingAlgosSpotlight />
         <ExperienceList />
         <ProjectsList />
         <CertificationsList />

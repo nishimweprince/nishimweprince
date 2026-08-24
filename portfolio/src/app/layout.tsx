@@ -34,7 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       'https://x.com/nishimweprince',
     ],
     description:
-      'Full-Stack Developer building reliable web applications, AI agents, and public-scale platforms.',
+      'Full-stack engineer building Trading Algos, reliable web applications, AI agents, and public-scale platforms.',
   };
 
   return (

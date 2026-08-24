@@ -6,7 +6,7 @@ export const metadataConstants: Metadata = {
     template: '%s | Nishimwe Prince',
   },
   description:
-    'Full-Stack Developer with 5+ years of experience building web applications, AI agents, and government-scale platforms. Certified in Node.js (OpenJS) and AWS Solutions Architecture.',
+    'Full-stack engineer building Trading Algos, a signal-to-execution platform, alongside reliable web applications, AI agents, and public-scale systems.',
   keywords: [
     'Nishimwe Prince',
     'Full-Stack Developer',
@@ -45,7 +45,7 @@ export const metadataConstants: Metadata = {
   openGraph: {
     title: 'Nishimwe Prince | Full-Stack Developer & AI Agent Architect',
     description:
-      'Explore the architectural patterns and high-performance applications built by Nishimwe Prince. Expert in Next.js, AI, and scalable web tech.',
+      'Explore Trading Algos, a documented signal-to-execution platform, and other reliable systems built by Nishimwe Prince.',
     url: 'https://nishimweprince.dev',
     siteName: 'Nishimwe Prince Portfolio',
     images: [
@@ -62,7 +62,7 @@ export const metadataConstants: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Nishimwe Prince (@nishimweprince)',
-    description: 'Full-Stack Developer & AI Agent Architect building the future of web.',
+    description: 'Full-stack engineer building Trading Algos and reliable software systems.',
     creator: '@nishimweprince',
     images: ['/og-image.png'],
   },

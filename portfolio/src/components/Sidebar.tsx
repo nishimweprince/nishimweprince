@@ -1,6 +1,7 @@
 import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
+  { href: '#trading-algos', label: 'Trading Algos' },
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#certifications', label: 'Credentials' },
