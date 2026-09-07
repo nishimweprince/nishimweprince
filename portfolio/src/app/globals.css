@@ -360,6 +360,7 @@ a {
   min-height: 2.8rem;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   padding: 0.7rem 1.2rem;
   border: 1px solid transparent;
   border-radius: 999px;
